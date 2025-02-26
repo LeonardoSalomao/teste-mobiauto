@@ -4,17 +4,11 @@ import { Container, Typography } from "@mui/material";
 import { useRouter, useSearchParams } from "next/navigation";
 import CardPreco from "../../components/CardPreco/CardPrecoComponent";
 import LoadingComponent from "../../components/Loading/LoadingComponent";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { getFipeData } from "../../api/fipe";
 
-interface FipeResponse {
-  Marca: string;
-  Modelo: string;
-  AnoModelo: string;
-  Valor: string;
-}
-
-export default function Resultado() {
+// Componente Resultado envolvido em Suspense
+function ResultadoContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -22,7 +16,14 @@ export default function Resultado() {
     const modelo = searchParams.get("modelo");
     const ano = searchParams.get("ano");
 
-    const [resultado, setResultado] = useState<FipeResponse | null>(null);
+    interface FipeData {
+        Marca: string;
+        Modelo: string;
+        AnoModelo: number;
+        Valor: string;
+    }
+
+    const [resultado, setResultado] = useState<FipeData | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -64,5 +65,13 @@ export default function Resultado() {
                 </Typography>
             )}
         </Container>
+    );
+}
+
+export default function Resultado() {
+    return (
+        <Suspense fallback={<LoadingComponent />}>
+            <ResultadoContent />
+        </Suspense>
     );
 }

@@ -7,6 +7,13 @@ import LoadingComponent from "../../components/Loading/LoadingComponent";
 import { useEffect, useState } from "react";
 import { getFipeData } from "../../api/fipe";
 
+interface FipeResponse {
+  Marca: string;
+  Modelo: string;
+  AnoModelo: string;
+  Valor: string;
+}
+
 export default function Resultado() {
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -15,7 +22,7 @@ export default function Resultado() {
     const modelo = searchParams.get("modelo");
     const ano = searchParams.get("ano");
 
-    const [resultado, setResultado] = useState<any>(null);
+    const [resultado, setResultado] = useState<FipeResponse | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

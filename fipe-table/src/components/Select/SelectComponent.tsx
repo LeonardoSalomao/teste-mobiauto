@@ -1,9 +1,9 @@
-import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from "@mui/material";
 
 interface SelectComponentProps {
   label: string;
   value: string;
-  onChange: (event: any) => void;
+  onChange: (event: SelectChangeEvent<string>, child: React.ReactNode) => void;
   options: { codigo: string; nome: string }[];
   disabled?: boolean;
 }
@@ -23,7 +23,7 @@ export default function SelectComponent({ label, value, onChange, options, disab
             borderColor: "black",
           },
         },
-                "& .MuiSelect-select": {
+        "& .MuiSelect-select": {
           color: "black !important",
         },
         "& .MuiInputLabel-root": {

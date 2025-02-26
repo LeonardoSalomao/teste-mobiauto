@@ -14,19 +14,10 @@ export default function Busca() {
 
     useEffect(() => {
         dispatch(fetchMarcas());
-    }, [dispatch]);
-
-    useEffect(() => {
-        if (marcaSelecionada) {
-            dispatch(fetchModelos(marcaSelecionada));
-        }
-    }, [marcaSelecionada, dispatch]);
-
-    useEffect(() => {
-        if (modeloSelecionado) {
-            dispatch(fetchAnos({ marcaId: marcaSelecionada, modeloId: modeloSelecionado }));
-        }
-    }, [modeloSelecionado, dispatch]);
+    
+        if (marcaSelecionada) dispatch(fetchModelos(marcaSelecionada));
+        if (modeloSelecionado) dispatch(fetchAnos({ marcaId: marcaSelecionada, modeloId: modeloSelecionado }));
+    }, [dispatch, marcaSelecionada, modeloSelecionado]);
 
     return (
         <Box>

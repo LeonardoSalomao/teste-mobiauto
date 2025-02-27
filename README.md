@@ -20,9 +20,9 @@ Este projeto é uma aplicação para consulta de valores de veículos baseada na
 
 ---
 
-## 🛠️ Instalação e Uso
+## Instalação e Uso
 
-### 🔹 Rodando a aplicação FIPE-Table
+### Rodando a aplicação FIPE-Table
 
 1. **Clone o repositório**  
    ```sh
@@ -45,7 +45,7 @@ Este projeto é uma aplicação para consulta de valores de veículos baseada na
 
 ---
 
-### 🔹 Executando os exercícios
+### Executando os exercícios
 
 Os exercícios estão organizados dentro da pasta `exercicios`.
 
@@ -72,7 +72,7 @@ Os exercícios estão organizados dentro da pasta `exercicios`.
 
 ---
 
-## 🌎 Deploy
+## Deploy
 
 A aplicação está disponível online via Vercel:  
 🔗 **[Link do Deploy](https://teste-mobiauto-4hlq.vercel.app/)**

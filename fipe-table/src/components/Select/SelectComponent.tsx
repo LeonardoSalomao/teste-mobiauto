@@ -16,9 +16,6 @@ export default function SelectComponent({ label, value, onChange, options, disab
         mb: 2,
         textAlign: "left",
         "& .MuiOutlinedInput-root": {
-          "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "black",
-          },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
             borderColor: "black",
           },

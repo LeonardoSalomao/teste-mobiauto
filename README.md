@@ -75,4 +75,4 @@ Os exercícios estão organizados dentro da pasta `exercicios`.
 ## Deploy
 
 A aplicação está disponível online via Vercel:  
-🔗 **[Link do Deploy](https://teste-mobiauto-4hlq.vercel.app/)**
+**[Link do Deploy](https://teste-mobiauto-4hlq.vercel.app/)**
